@@ -1,0 +1,121 @@
+{
+    "identifier": "com.doubao.tts.bob.plugin",
+    "version": "1.0.0",
+    "category": "tts",
+    "name": "豆包 TTS",
+    "summary": "使用火山引擎豆包语音合成大模型进行语音合成",
+    "icon": "132",
+    "author": "littlecowherd",
+    "homepage": "https://github.com/littlecowherd/bob-plugin-doubao-tts",
+    "appcast": "",
+    "minBobVersion": "1.8.0",
+    "options": [
+        {
+            "identifier": "appId",
+            "type": "text",
+            "title": "App ID",
+            "desc": "火山引擎控制台获取的 APP ID",
+            "textConfig": {
+                "type": "visible",
+                "placeholderText": "请输入 App ID",
+                "height": "26"
+            }
+        },
+        {
+            "identifier": "accessKey",
+            "type": "text",
+            "title": "Access Key",
+            "desc": "火山引擎控制台获取的 Access Token",
+            "textConfig": {
+                "type": "secure",
+                "placeholderText": "请输入 Access Key",
+                "height": "26"
+            }
+        },
+        {
+            "identifier": "resourceId",
+            "type": "menu",
+            "title": "模型版本",
+            "desc": "选择语音合成模型版本，不同版本支持不同音色",
+            "defaultValue": "seed-tts-2.0",
+            "menuValues": [
+                {
+                    "title": "豆包语音合成 2.0（推荐）",
+                    "value": "seed-tts-2.0"
+                },
+                {
+                    "title": "豆包语音合成 1.0",
+                    "value": "seed-tts-1.0"
+                },
+                {
+                    "title": "豆包语音合成 1.0（并发版）",
+                    "value": "seed-tts-1.0-concurr"
+                },
+                {
+                    "title": "声音复刻 2.0",
+                    "value": "seed-icl-2.0"
+                },
+                {
+                    "title": "声音复刻 1.0",
+                    "value": "seed-icl-1.0"
+                }
+            ]
+        },
+        {
+            "identifier": "voiceType",
+            "type": "text",
+            "title": "音色 ID",
+            "desc": "填写音色 ID，完整音色列表见：https://www.volcengine.com/docs/6561/1257544",
+            "defaultValue": "zh_female_vv_uranus_bigtts",
+            "textConfig": {
+                "type": "visible",
+                "placeholderText": "zh_female_vv_uranus_bigtts",
+                "height": "26"
+            }
+        },
+        {
+            "identifier": "audioFormat",
+            "type": "menu",
+            "title": "音频格式",
+            "defaultValue": "mp3",
+            "menuValues": [
+                {
+                    "title": "MP3（推荐）",
+                    "value": "mp3"
+                },
+                {
+                    "title": "OGG Opus",
+                    "value": "ogg_opus"
+                },
+                {
+                    "title": "PCM",
+                    "value": "pcm"
+                }
+            ]
+        },
+        {
+            "identifier": "speechRate",
+            "type": "text",
+            "title": "语速",
+            "desc": "取值范围 -50 到 100。0 为默认语速，100 为 2 倍速，-50 为 0.5 倍速",
+            "defaultValue": "0",
+            "textConfig": {
+                "type": "visible",
+                "placeholderText": "0",
+                "height": "26"
+            }
+        },
+        {
+            "identifier": "timeout",
+            "type": "text",
+            "title": "超时时间（秒）",
+            "desc": "请求超时时间，范围 30-300 秒",
+            "defaultValue": "60",
+            "textConfig": {
+                "type": "visible",
+                "placeholderText": "60",
+                "height": "26"
+            }
+        }
+    ]
+}
