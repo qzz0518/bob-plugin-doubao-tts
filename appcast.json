@@ -4,8 +4,8 @@
         {
             "version": "1.0.0",
             "desc": "初始版本：基于豆包语音合成大模型 V3 HTTP 单向流式接口实现 TTS",
-            "sha256": "1acf1306a7c5a6923dc6b4ddd2366baf8b949e0117f50120b88630024ae7850a",
-            "url": "https://github.com/littlecowherd/bob-plugin-doubao-tts/raw/master/doubao-tts.bobplugin",
+            "sha256": "8f796611431cc0400160fc9c50c49f490b1c2fca4c6d37856952d9e805f00eb9",
+            "url": "https://github.com/Littlecowherd/bob-plugin-doubao-tts/raw/main/doubao-tts.bobplugin",
             "minBobVersion": "1.8.0",
             "timestamp": 1770815729000
         }

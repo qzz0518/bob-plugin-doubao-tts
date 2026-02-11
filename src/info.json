@@ -6,8 +6,8 @@
     "summary": "使用火山引擎豆包语音合成大模型进行语音合成",
     "icon": "132",
     "author": "littlecowherd",
-    "homepage": "https://github.com/littlecowherd/bob-plugin-doubao-tts",
-    "appcast": "https://github.com/littlecowherd/bob-plugin-doubao-tts/raw/master/appcast.json",
+    "homepage": "https://github.com/Littlecowherd/bob-plugin-doubao-tts",
+    "appcast": "https://github.com/Littlecowherd/bob-plugin-doubao-tts/raw/main/appcast.json",
     "minBobVersion": "1.8.0",
     "options": [
         {
