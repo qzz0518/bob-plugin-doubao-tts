@@ -7,7 +7,7 @@
     "icon": "132",
     "author": "littlecowherd",
     "homepage": "https://github.com/littlecowherd/bob-plugin-doubao-tts",
-    "appcast": "",
+    "appcast": "https://github.com/littlecowherd/bob-plugin-doubao-tts/raw/master/appcast.json",
     "minBobVersion": "1.8.0",
     "options": [
         {
