@@ -1,6 +1,6 @@
 {
     "identifier": "com.doubao.tts.bob.plugin",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "category": "tts",
     "name": "豆包 TTS",
     "summary": "使用火山引擎豆包语音合成大模型进行语音合成",

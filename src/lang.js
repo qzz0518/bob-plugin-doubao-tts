@@ -23,6 +23,20 @@ for (var i = 0; i < supportLanguages.length; i++) {
     langSet[supportLanguages[i][0]] = true;
 }
 
+// Bob 语言代码 → 豆包 explicit_language 映射
+var explicitLanguageMap = {
+    'zh-Hans': 'zh-cn',
+    'zh-Hant': 'zh-cn',
+    'en': 'en',
+    'ja': 'ja',
+    'es': 'es-mx',
+    'pt': 'pt-br',
+    'id': 'id',
+    'ko': 'crosslingual',
+    'fr': 'crosslingual',
+    'de': 'crosslingual'
+};
+
 /**
  * 检查是否支持该语言
  * @param {string} lang Bob 语言代码
@@ -32,5 +46,15 @@ function isSupported(lang) {
     return langSet[lang] === true;
 }
 
+/**
+ * 获取豆包 explicit_language 值
+ * @param {string} lang Bob 语言代码
+ * @returns {string} 豆包语言代码
+ */
+function getExplicitLanguage(lang) {
+    return explicitLanguageMap[lang] || 'crosslingual';
+}
+
 exports.supportLanguages = supportLanguages;
 exports.isSupported = isSupported;
+exports.getExplicitLanguage = getExplicitLanguage;

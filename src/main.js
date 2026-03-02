@@ -95,7 +95,7 @@ function tts(query, completion) {
 
     // 文本长度保护（建议小于 300 字符，UTF-8 编码限制 1024 字节）
     if (text.length > 300) {
-        $log.warn('文本长度 ' + text.length + ' 字符，超过建议的 300 字符上限，可能影响合成质量');
+        $log.info('文本长度 ' + text.length + ' 字符，超过建议的 300 字符上限，可能影响合成质量');
     }
 
     // 2. 检查语言支持
@@ -145,6 +145,7 @@ function tts(query, completion) {
     if (speechRate > 100) speechRate = 100;
 
     // 5. 构建请求体
+    var explicitLanguage = lang.getExplicitLanguage(query.lang);
     var requestBody = {
         user: {
             uid: 'bob-plugin-user'
@@ -156,7 +157,10 @@ function tts(query, completion) {
                 format: audioFormat,
                 sample_rate: 24000,
                 speech_rate: speechRate
-            }
+            },
+            additions: JSON.stringify({
+                explicit_language: explicitLanguage
+            })
         }
     };
 
@@ -169,7 +173,7 @@ function tts(query, completion) {
         'Content-Type': 'application/json'
     };
 
-    $log.info('豆包 TTS 请求: speaker=' + voiceType + ', resourceId=' + resourceId + ', format=' + audioFormat);
+    $log.info('豆包 TTS 请求: speaker=' + voiceType + ', resourceId=' + resourceId + ', format=' + audioFormat + ', language=' + explicitLanguage);
 
     // 7. 发送流式请求
     var audioData = null;
@@ -291,7 +295,7 @@ function tts(query, completion) {
                 $log.error('豆包 TTS 错误: code=' + chunk.code + ', message=' + chunk.message);
             }
         } catch (e) {
-            $log.warn('解析响应行失败: ' + line.substring(0, 200));
+            $log.info('解析响应行失败: ' + line.substring(0, 200));
         }
     }
 }
